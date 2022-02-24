@@ -22,4 +22,13 @@ angular.module('app').controller('mainController', function ($scope) {
       telefone: '(77) 998523145',
     },
   ];
+
+  $scope.addLead = function (lead) {
+    const httpLead = {
+      ...lead,
+      created_at: new Date(),
+    };
+
+    $scope.leads.push(httpLead);
+  };
 });
