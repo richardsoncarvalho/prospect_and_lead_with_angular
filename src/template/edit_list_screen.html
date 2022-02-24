@@ -1,0 +1,35 @@
+<div class="card">
+  <h1 class="card__card-title">
+    <a href="#!/" title="Voltar">Voltar</a>
+    Editar lead
+  </h1>
+
+  <form name="Lead" ng-submit="addLead(lead)">
+    <div class="card__form-control">
+      <label class="__title" for="cadencia">Cadência *</label>
+
+      <select name="cadencia" id="cadencia" class="form-control__input" ng-model="lead.cadence" ng-options="cadence.name for cadence in cadences track by cadence.id" required>
+        <option value="">Selecione uma cadência</option>
+      </select>
+    </div>
+
+    <div class="card__form-control">
+      <label class="__title" for="name">Nome</label>
+      <input type="text" name="name" id="name" placeholder="Digite seu nome" class="form-control__input" ng-model="lead.name" />
+    </div>
+
+    <div class="card__form-control">
+      <label class="__title" for="email">E-mail *</label>
+      <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="form-control__input" required ng-model="lead.email" />
+    </div>
+
+    <div class="card__form-control">
+      <label class="__title" for="telefone">Telefone</label>
+      <input type="tel" name="telefone" id="telefone" placeholder="(77) 99999-9999" class="form-control__input" ng-model="lead.telefone" />
+    </div>
+
+    <div class="card__form-control __justify-space-between">
+      <button type="submit" class="btn btn-warning">Atualizar</button>
+    </div>
+  </form>
+</div>

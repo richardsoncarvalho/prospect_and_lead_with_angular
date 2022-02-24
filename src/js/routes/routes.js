@@ -5,5 +5,10 @@ angular.module('app').config([
       controller: 'getLeadController',
       templateUrl: 'src/template/lead_list_screen.html',
     });
+
+    $routeProvider.when('/edit/lead', {
+      controller: 'editLeadController',
+      templateUrl: 'src/template/edit_list_screen.html',
+    });
   },
 ]);

@@ -16,6 +16,12 @@
   background-color: var(--green);
 }
 
+.btn-warning {
+  background-color: var(--orange);
+  margin-left: auto;
+  width: 180px;
+}
+
 .btn:disabled {
   filter: opacity(0.75);
   background-color: none;
