@@ -30,76 +30,10 @@
   </header>
 
   <main class="main container __content">
-    <div class="card">
-      <h1 class="card__card-title">Adicionar lead</h1>
-
-      <form name="addLead">
-        <div class="card__form-control">
-          <label class="__title" for="cadencia">Cadência *</label>
-
-          <select name="cadencia" id="cadencia" class="form-control__input" required>
-            <option value="">Selecione uma cadência</option>
-          </select>
-        </div>
-
-        <div class="card__form-control">
-          <label class="__title" for="name">Nome</label>
-          <input type="text" name="name" id="name" placeholder="Digite seu nome" class="form-control__input" />
-        </div>
-
-        <div class="card__form-control">
-          <label class="__title" for="email">E-mail *</label>
-          <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="form-control__input" required />
-        </div>
-
-        <div class="card__form-control">
-          <label class="__title" for="telefone">Telefone</label>
-          <input type="telefone" name="telefone" id="telefone" placeholder="(77) 99999-9999" class="form-control__input" />
-        </div>
-
-        <div class="card__form-control __justify-space-between">
-          <button type="reset" class="btn btn-danger" disabled="true">Limpar</button>
-          <button type="submit" class="btn btn-primary">Adicionar</button>
-        </div>
-      </form>
+    <div class="card" ng-include="'src/template/add_form.html'">
     </div>
 
-    <div class="card">
-      <h1 class="card__card-title">Lista de leads</h1>
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Criado em</th>
-            <th>Telefone</th>
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>
-              Elon Musk <br />
-              richardsonbrc@gmail.com
-            </td>
-
-            <td>
-              01/03/2022
-            </td>
-
-            <td>
-              (48) 99845-2643
-            </td>
-
-            <td>
-              <a href="#" title="Editar">
-                Editar
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card" ng-include="'src/template/list_prospect.html'">
     </div>
   </main>
 

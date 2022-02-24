@@ -1,0 +1,31 @@
+<h1 class="card__card-title">Adicionar lead</h1>
+
+<form name="addLead">
+  <div class="card__form-control">
+    <label class="__title" for="cadencia">Cadência *</label>
+
+    <select name="cadencia" id="cadencia" class="form-control__input" required>
+      <option value="">Selecione uma cadência</option>
+    </select>
+  </div>
+
+  <div class="card__form-control">
+    <label class="__title" for="name">Nome</label>
+    <input type="text" name="name" id="name" placeholder="Digite seu nome" class="form-control__input" />
+  </div>
+
+  <div class="card__form-control">
+    <label class="__title" for="email">E-mail *</label>
+    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="form-control__input" required />
+  </div>
+
+  <div class="card__form-control">
+    <label class="__title" for="telefone">Telefone</label>
+    <input type="telefone" name="telefone" id="telefone" placeholder="(77) 99999-9999" class="form-control__input" />
+  </div>
+
+  <div class="card__form-control __justify-space-between">
+    <button type="reset" class="btn btn-danger" disabled="true">Limpar</button>
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+  </div>
+</form>
