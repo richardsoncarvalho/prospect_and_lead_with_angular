@@ -25,7 +25,7 @@
   </div>
 
   <div class="card__form-control __justify-space-between">
-    <button type="reset" class="btn btn-danger" ng-disabled="!lead.email && !lead.cadence">Limpar</button>
+    <button type="reset" class="btn btn-danger" ng-disabled="!lead.email || !lead.cadence" ng-click="clearForm">Limpar</button>
     <button type="submit" class="btn btn-primary">Adicionar</button>
   </div>
 </form>
