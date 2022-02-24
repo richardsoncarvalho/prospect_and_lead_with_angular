@@ -1,0 +1,39 @@
+.card {
+  background-color: var(--white);
+  border-radius: 4.5px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+
+.card__card-title {
+  color: var(--black);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card__form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.__justify-space-between {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card__form-control .__title {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control__input {
+  border: 0.7px var(--gray) solid;
+  border-radius: 4.5px;
+  padding: 15px;
+  height: 45px;
+}

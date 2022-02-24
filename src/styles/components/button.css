@@ -1,0 +1,27 @@
+.btn {
+  border-radius: 4.5px;
+  border: none;
+  height: 50px;
+  width: 47%;
+  font-weight: bold;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.btn-danger {
+  background-color: var(--red);
+}
+
+.btn-primary {
+  background-color: var(--green);
+}
+
+.btn:disabled {
+  filter: opacity(0.75);
+  background-color: none;
+  cursor: no-drop;
+}
+
+.btn:hover {
+  filter: opacity(0.75);
+}

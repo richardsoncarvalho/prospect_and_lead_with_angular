@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meetime</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles/config/variables.css" />
+  <link rel="stylesheet" href="./src/styles/config/reset.css" />
+  <link rel="stylesheet" href="./src/styles/config/container.css" />
+  <link rel="stylesheet" href="./src/styles/components/header.css" />
+  <link rel="stylesheet" href="./src/styles/components/main.css" />
+  <link rel="stylesheet" href="./src/styles/components/card.css" />
+  <link rel="stylesheet" href="./src/styles/components/button.css" />
+  <link rel="stylesheet" href="./src/styles/components/table.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container __center">
+      <a href="#" title="Meetime">
+        <img src="./src/img/logo-meetime.png" alt="Meetime" />
+      </a>
+    </div>
+  </header>
+
+  <main class="main container __content">
+    <div class="card">
+      <h1 class="card__card-title">Adicionar lead</h1>
+
+      <form name="addLead">
+        <div class="card__form-control">
+          <label class="__title" for="cadencia">Cadência</label>
+
+          <select name="cadencia" id="cadencia" class="form-control__input" required>
+            <option value="">Selecione uma cadência</option>
+          </select>
+        </div>
+
+        <div class="card__form-control">
+          <label class="__title" for="name">Nome</label>
+          <input type="text" name="name" id="name" placeholder="Digite seu nome" class="form-control__input" required />
+        </div>
+
+        <div class="card__form-control">
+          <label class="__title" for="email">E-mail</label>
+          <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="form-control__input" required />
+        </div>
+
+        <div class="card__form-control">
+          <label class="__title" for="telefone">Telefone</label>
+          <input type="telefone" name="telefone" id="telefone" placeholder="(77) 99999-9999" class="form-control__input" />
+        </div>
+
+        <div class="card__form-control __justify-space-between">
+          <button type="reset" class="btn btn-danger" disabled="true">Limpar</button>
+          <button type="submit" class="btn btn-primary">Adicionar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h1 class="card__card-title">Lista de leads</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Criado em</th>
+            <th>Telefone</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              Elon Musk <br />
+              richardsonbrc@gmail.com
+            </td>
+
+            <td>
+              01/03/2022
+            </td>
+
+            <td>
+              (48) 99845-2643
+            </td>
+
+            <td>
+              <a href="#" title="Editar">
+                Editar
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+
+</html>
