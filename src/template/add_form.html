@@ -4,7 +4,7 @@
   <div class="card__form-control">
     <label class="__title" for="cadencia">Cadência *</label>
 
-    <select name="cadencia" id="cadencia" class="form-control__input">
+    <select name="cadencia" id="cadencia" class="form-control__input" ng-model="lead.cadence" ng-options="cadence.name for cadence in cadences track by cadence.id" required>
       <option value="">Selecione uma cadência</option>
     </select>
   </div>
@@ -25,7 +25,7 @@
   </div>
 
   <div class="card__form-control __justify-space-between">
-    <button type="reset" class="btn btn-danger" ng-disabled="!lead.email">Limpar</button>
+    <button type="reset" class="btn btn-danger" ng-disabled="!lead.email && !lead.cadence">Limpar</button>
     <button type="submit" class="btn btn-primary">Adicionar</button>
   </div>
 </form>
