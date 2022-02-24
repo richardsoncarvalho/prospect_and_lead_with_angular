@@ -11,18 +11,18 @@
   </thead>
 
   <tbody>
-    <tr>
+    <tr ng-repeat="lead in leads">
       <td>
-        Elon Musk <br />
-        richardsonbrc@gmail.com
+        {{ lead.name }} <br />
+        {{ lead.email }}
       </td>
 
       <td>
-        01/03/2022
+        {{ lead.created_at }}
       </td>
 
       <td>
-        (48) 99845-2643
+        {{ lead.telefone }}
       </td>
 
       <td>

@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
   <link rel="stylesheet" href="./src/styles/config/variables.css" />
   <link rel="stylesheet" href="./src/styles/config/reset.css" />
   <link rel="stylesheet" href="./src/styles/config/container.css" />
@@ -29,7 +29,7 @@
     </div>
   </header>
 
-  <main class="main container __content">
+  <main class="main container __content" ng-controller="mainController">
     <div class="card" ng-include="'src/template/add_form.html'">
     </div>
 
@@ -39,6 +39,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="./src/js/app.js"></script>
+  <script src="./src/js/controllers/mainController.js"></script>
 </body>
 
 </html>
