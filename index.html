@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="app">
 
 <head>
   <meta charset="UTF-8">
@@ -35,7 +35,7 @@
 
       <form name="addLead">
         <div class="card__form-control">
-          <label class="__title" for="cadencia">Cadência</label>
+          <label class="__title" for="cadencia">Cadência *</label>
 
           <select name="cadencia" id="cadencia" class="form-control__input" required>
             <option value="">Selecione uma cadência</option>
@@ -44,11 +44,11 @@
 
         <div class="card__form-control">
           <label class="__title" for="name">Nome</label>
-          <input type="text" name="name" id="name" placeholder="Digite seu nome" class="form-control__input" required />
+          <input type="text" name="name" id="name" placeholder="Digite seu nome" class="form-control__input" />
         </div>
 
         <div class="card__form-control">
-          <label class="__title" for="email">E-mail</label>
+          <label class="__title" for="email">E-mail *</label>
           <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="form-control__input" required />
         </div>
 
@@ -102,6 +102,9 @@
       </table>
     </div>
   </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="./src/js/app.js"></script>
 </body>
 
 </html>
