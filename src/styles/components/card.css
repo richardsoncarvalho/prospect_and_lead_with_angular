@@ -37,3 +37,17 @@
   padding: 15px;
   height: 45px;
 }
+
+.__without_lead {
+  justify-content: center;
+  align-items: center;
+}
+
+.__without_lead img {
+  margin-bottom: 20px;
+}
+
+.__without_lead h1 {
+  font-size: 26px;
+  font-weight: bold;
+}

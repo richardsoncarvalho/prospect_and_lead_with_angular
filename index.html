@@ -33,7 +33,12 @@
     <div class="card" ng-include="'src/template/add_form.html'">
     </div>
 
-    <div class="card" ng-include="'src/template/list_prospect.html'">
+    <div class="card __without_lead" ng-if="leads.length == 0">
+      <img src="./src/img/logo-meetime.png" alt="Meetime" />
+      <h1>Nenhum Lead cadastrado</h1>
+    </div>
+
+    <div class="card" ng-if="leads.length > 0" ng-include="'src/template/list_prospect.html'">
     </div>
   </main>
 

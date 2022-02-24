@@ -15,7 +15,7 @@ angular
 
       const getLeads = function () {
         getLeadAPI.getLeads().then(function ({ data }) {
-          $scope.leads = data.data;
+          $scope.leads = data.data.length > 0 ? data.data : [];
         });
       };
 
