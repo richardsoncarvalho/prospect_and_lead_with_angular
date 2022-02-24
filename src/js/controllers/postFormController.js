@@ -1,21 +1,14 @@
 angular
   .module('app')
   .controller(
-    'mainController',
-    function ($scope, getCadencesAPI, saveProspectAPI, getLeadAPI) {
+    'postFormController',
+    function ($rootScope, $scope, getCadencesAPI, saveProspectAPI) {
       $scope.lead = {};
-      $scope.leads = [];
       $scope.cadences = [];
 
       const getCadences = function () {
         getCadencesAPI.getCadences().then(function ({ data }) {
           $scope.cadences = data.data;
-        });
-      };
-
-      const getLeads = function () {
-        getLeadAPI.getLeads().then(function ({ data }) {
-          $scope.leads = data.data.length > 0 ? data.data : [];
         });
       };
 
@@ -31,7 +24,7 @@ angular
         saveProspectAPI
           .saveProspect(lead.cadence, httpRequest)
           .then(function () {
-            getLeads();
+            $rootScope.$broadcast('updateLead');
             clearForm();
           });
       };
@@ -41,6 +34,5 @@ angular
       };
 
       getCadences();
-      getLeads();
     },
   );
