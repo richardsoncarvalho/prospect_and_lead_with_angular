@@ -24,10 +24,16 @@ angular
       };
 
       $scope.addLead = function (lead) {
-        saveProspectAPI.saveProspect(lead.cadence.id, lead).then(function () {
-          getLeads();
-          clearForm();
-        });
+        const httpRequest = {
+          ...lead,
+          cadence: lead.cadence.id,
+        };
+        saveProspectAPI
+          .saveProspect(lead.cadence, httpRequest)
+          .then(function () {
+            getLeads();
+            clearForm();
+          });
       };
 
       $scope.clear = function () {

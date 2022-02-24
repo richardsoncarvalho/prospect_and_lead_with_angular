@@ -13,16 +13,16 @@
   <tbody>
     <tr ng-repeat="lead in leads">
       <td>
-        {{ lead.name }} <br />
-        {{ lead.email }}
+        <span class="table__lead--name">{{ lead.lead_name || 'Lead sem Nome' }}</span> <br />
+        <span class="table__lead--email">{{ lead.lead_email }}</span>
       </td>
 
       <td>
-        {{ lead.created_at }}
+        {{ lead.lead_created_date }}
       </td>
 
       <td>
-        {{ lead.telefone }}
+        {{ lead.phones || '(00) 0 0000-0000' }}
       </td>
 
       <td>

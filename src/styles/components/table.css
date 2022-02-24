@@ -18,3 +18,12 @@
 .table tbody tr:nth-child(2n - 1) {
   background-color: var(--main-background-color);
 }
+
+.table__lead--name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.table__lead--email {
+  font-size: 12px;
+}

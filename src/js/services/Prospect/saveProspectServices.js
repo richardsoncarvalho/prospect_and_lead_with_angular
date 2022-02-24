@@ -1,8 +1,8 @@
 angular.module('app').service('saveProspectAPI', function ($http, config) {
   return {
-    saveProspect: function (id, data) {
+    saveProspect: function (cadence, data) {
       return $http.post(
-        `${config.baseUrl}prospections/cadence/${id}/lead`,
+        `${config.baseUrl}prospections/cadence/${cadence.id}/lead?token=${cadence.token}`,
         data,
       );
     },
