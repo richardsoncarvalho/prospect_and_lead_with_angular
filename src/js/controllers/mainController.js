@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .controller('mainController', function ($scope, $http, config) {
+  .controller('mainController', function ($scope, getCadencesAPI) {
     $scope.leads = [
       {
         id: 1,
@@ -28,7 +28,7 @@ angular
     $scope.cadences = [];
 
     const getCadences = () => {
-      $http.get(`${config.baseUrl}/cadences`).then(function ({ data }) {
+      getCadencesAPI.getCadences().then(function ({ data }) {
         $scope.cadences = data.data;
       });
     };
