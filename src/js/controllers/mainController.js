@@ -2,38 +2,20 @@ angular
   .module('app')
   .controller(
     'mainController',
-    function ($scope, getCadencesAPI, saveProspectAPI) {
+    function ($scope, getCadencesAPI, saveProspectAPI, getLeadAPI) {
       $scope.lead = {};
-
-      $scope.leads = [
-        {
-          id: 1,
-          name: 'Richardson',
-          email: 'richardsonbrc@gmail.com',
-          created_at: '01/03/2022',
-          telefone: '(77) 998523145',
-        },
-        {
-          id: 2,
-          name: 'Bruno',
-          email: 'richardsonbrc@gmail.com',
-          created_at: '01/03/2022',
-          telefone: '(77) 998523145',
-        },
-        {
-          id: 3,
-          name: 'Carvalho',
-          email: 'richardsonbrc@gmail.com',
-          created_at: '01/03/2022',
-          telefone: '(77) 998523145',
-        },
-      ];
-
+      $scope.leads = [];
       $scope.cadences = [];
 
       const getCadences = function () {
         getCadencesAPI.getCadences().then(function ({ data }) {
           $scope.cadences = data.data;
+        });
+      };
+
+      const getLeads = function () {
+        getLeadAPI.getLeads().then(function ({ data }) {
+          $scope.leads = data.data;
         });
       };
 
@@ -43,7 +25,7 @@ angular
 
       $scope.addLead = function (lead) {
         saveProspectAPI.saveProspect(lead.cadence.id, lead).then(function () {
-          getCadences();
+          getLeads();
           clearForm();
         });
       };
@@ -53,5 +35,6 @@ angular
       };
 
       getCadences();
+      getLeads();
     },
   );
