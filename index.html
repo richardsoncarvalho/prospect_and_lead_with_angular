@@ -35,21 +35,17 @@
     </div>
 
 
-    <div ng-controller="getLeadController">
-      <div class="card" ng-include="'src/template/list_prospect.html'" ng-if="leads.length != 0"></div>
-
-      <div class="card __without_lead" ng-if="leads.length == 0">
-        <img src="./src/img/logo-meetime.png" alt="Meetime" />
-        <h1>Nenhum Lead cadastrado</h1>
-      </div>
+    <div ng-view>
     </div>
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
   <script src="./src/js/app.js"></script>
   <script src="./src/js/client/config.js"></script>
   <script src="./src/js/client/configMiddleware.js"></script>
   <script src="./src/js/middleware/authMiddleware.js"></script>
+  <script src="./src/js/routes/routes.js"></script>
   <script src="./src/js/services/Cadence/getCadencesServices.js"></script>
   <script src="./src/js/services/Prospect/saveProspectServices.js"></script>
   <script src="./src/js/services/Lead/getLeadServices.js"></script>
