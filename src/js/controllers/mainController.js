@@ -1,57 +1,57 @@
 angular
   .module('app')
-  .controller('mainController', function ($scope, getCadencesAPI) {
-    $scope.lead = {};
-
-    $scope.leads = [
-      {
-        id: 1,
-        name: 'Richardson',
-        email: 'richardsonbrc@gmail.com',
-        created_at: '01/03/2022',
-        telefone: '(77) 998523145',
-      },
-      {
-        id: 2,
-        name: 'Bruno',
-        email: 'richardsonbrc@gmail.com',
-        created_at: '01/03/2022',
-        telefone: '(77) 998523145',
-      },
-      {
-        id: 3,
-        name: 'Carvalho',
-        email: 'richardsonbrc@gmail.com',
-        created_at: '01/03/2022',
-        telefone: '(77) 998523145',
-      },
-    ];
-
-    $scope.cadences = [];
-
-    const getCadences = function () {
-      getCadencesAPI.getCadences().then(function ({ data }) {
-        $scope.cadences = data.data;
-      });
-    };
-
-    const clearForm = function () {
+  .controller(
+    'mainController',
+    function ($scope, getCadencesAPI, saveProspectAPI) {
       $scope.lead = {};
-    };
 
-    $scope.addLead = function (lead) {
-      const httpLead = {
-        ...lead,
-        created_at: new Date().toLocaleDateString(),
+      $scope.leads = [
+        {
+          id: 1,
+          name: 'Richardson',
+          email: 'richardsonbrc@gmail.com',
+          created_at: '01/03/2022',
+          telefone: '(77) 998523145',
+        },
+        {
+          id: 2,
+          name: 'Bruno',
+          email: 'richardsonbrc@gmail.com',
+          created_at: '01/03/2022',
+          telefone: '(77) 998523145',
+        },
+        {
+          id: 3,
+          name: 'Carvalho',
+          email: 'richardsonbrc@gmail.com',
+          created_at: '01/03/2022',
+          telefone: '(77) 998523145',
+        },
+      ];
+
+      $scope.cadences = [];
+
+      const getCadences = function () {
+        getCadencesAPI.getCadences().then(function ({ data }) {
+          $scope.cadences = data.data;
+        });
       };
 
-      $scope.leads.push(httpLead);
-      clearForm();
-    };
+      const clearForm = function () {
+        $scope.lead = {};
+      };
 
-    $scope.clear = function () {
-      clearForm();
-    };
+      $scope.addLead = function (lead) {
+        saveProspectAPI.saveProspect(lead.cadence.id, lead).then(function () {
+          getCadences();
+          clearForm();
+        });
+      };
 
-    getCadences();
-  });
+      $scope.clear = function () {
+        clearForm();
+      };
+
+      getCadences();
+    },
+  );
